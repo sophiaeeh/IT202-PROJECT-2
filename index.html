@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Culinary Connoisseurs — Caterer Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Culinary Connoisseurs (CC)</h1>
+    <p class="subtitle">Caterer Access Portal</p>
+
+    <form id="ccForm" action="login.php" method="post" novalidate>
+      <div class="row two">
+        <div class="field">
+          <label for="firstName">First Name</label>
+          <input id="firstName" name="firstName" type="text" autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" name="lastName" type="text" autocomplete="family-name">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="phone">Phone (10 digits) with extension</label>
+          <input id="phone" name="phone" type="text" placeholder="973-555-1234 ext 789">
+          <small class="hint">Use spaces or dashes; include extension (x, ext, or extension).</small>
+        </div>
+      </div>
+
+      <div class="row two">
+        <div class="field">
+          <label for="catererId">Caterer ID (4 digits)</label>
+          <input id="catererId" name="catererId" type="text" maxlength="4" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Check the box to enable email">
+          <label class="checkbox-inline">
+            <input id="wantsEmail" name="wantsEmail" type="checkbox">
+            Email confirmation requested
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="pwd-wrap">
+            <input id="password" name="password" type="password" class="pwd-input" placeholder="Starts with special; ≤ 5 chars">
+            <button id="pwdToggle" type="button" aria-label="Show password" class="eye" title="Show or hide password">👁️</button>
+          </div>
+          <small class="hint">Must be 5 characters or fewer, start with a special character, and include at least one uppercase letter and one number.</small>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="transaction">Choose a transaction</label>
+          <select id="transaction" name="transaction">
+            <option value="">— Select a transaction —</option>
+            <option value="search">Search A Caterer&apos;s Accounts</option>
+            <option value="book">Book a Client&apos;s Catering Event</option>
+            <option value="cancel">Cancel A Client’s Catering Event</option>
+            <option value="request_addon">Request AddOn Catering Services</option>
+            <option value="update_addon">Update AddOn Catering Services</option>
+            <option value="create_client">Create A New Client Account</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row buttons">
+        <button id="submitBtn" type="submit">Submit</button>
+        <button id="resetBtn" type="reset" class="secondary">Reset</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
